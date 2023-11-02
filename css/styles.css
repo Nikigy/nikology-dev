@@ -1,0 +1,18 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; /* use the lighter weight */
+    font-size: 5rem;
+    text-align: center;
+}
+
+.button-container button {
+    margin: 0 5px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100; /* use the thinnest weight */
+}
