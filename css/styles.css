@@ -1,18 +1,47 @@
 body {
     font-family: 'Lato', sans-serif;
+    margin: 0; /* remove default margin */
 }
 
 h1 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300; /* use the lighter weight */
-    font-size: 5rem;
-    text-align: center;
+    font-family: 'Lato', sans-serif; /* add font family */
+    font-size: 5rem; /* increase font size */
+    font-weight: 300;
+    text-align: center; /* center the text */
+    background-color: grey; /* add grey background color */
+    color: white; /* add white text color */
+    padding: 100px; /* add padding */
+    margin: 0; /* remove margin */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 6vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
 }
 
 .button-container button {
     margin: 0 5px;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 100; /* use the thinnest weight */
+    font-size: 1.1rem; /* increase font size */
+    color: white; /* add white text color */
+    padding: 5px 10px; /* increase padding */
+    font-family: 'Lato', sans-serif; /* add font family */
+    background-color: transparent; /* make background transparent */
+    border: none; /* remove border */
+    cursor: pointer; /* add cursor */
+    transition: transform 0.3s ease; /* add transition */
+}
+
+.button-container button:hover {
+    transform: scale(1.2); /* increase size on hover */
+}
+
+@media screen and (min-width: 1024px) {
+    .button-container {
+        gap: 7px;
+    }
 }
