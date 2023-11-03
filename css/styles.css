@@ -1,43 +1,66 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* adjust as needed */
+    position: relative;
+    background-image: url('/images/big-sur-horizon.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+h1, .button-container {
+    position: relative;
+    z-index: 2;
+}
+
 body {
     font-family: 'Lato', sans-serif;
-    margin: 0; /* remove default margin */
+    margin: 0;
 }
 
 h1 {
-    font-family: 'Lato', sans-serif; /* add font family */
-    font-size: 5rem; /* increase font size */
+    font-family: 'Lato', sans-serif;
+    font-size: 5rem;
     font-weight: 300;
-    text-align: center; /* center the text */
-    background-color: grey; /* add grey background color */
-    color: white; /* add white text color */
-    padding: 100px; /* add padding */
-    margin: 0; /* remove margin */
+    text-align: center;
+    color: white;
+    padding: 100px;
+    margin: 0;
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 6vh;
     position: absolute;
-    top: 0;
-    right: 0;
-    margin: 1rem;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
 }
 
 .button-container button {
     margin: 0 5px;
-    font-size: 1.1rem; /* increase font size */
-    color: white; /* add white text color */
-    padding: 5px 10px; /* increase padding */
-    font-family: 'Lato', sans-serif; /* add font family */
-    background-color: transparent; /* make background transparent */
-    border: none; /* remove border */
-    cursor: pointer; /* add cursor */
-    transition: transform 0.3s ease; /* add transition */
+    font: 400 1.1rem/1.5 'Lato', sans-serif;
+    color: white;
+    padding: 5px 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .button-container button:hover {
-    transform: scale(1.2); /* increase size on hover */
+    transform: scale(1.2);
 }
 
 @media screen and (min-width: 1024px) {
