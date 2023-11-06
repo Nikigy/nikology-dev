@@ -1,5 +1,5 @@
 window.addEventListener('scroll', function() {
-    var buttonContainer = document.querySelector('.button-container');
+    var buttonContainer = document.querySelector('.banner');
     var websiteName = document.querySelector('.website-name');
     var scrollPosition = 50; // adjust this value as needed
 

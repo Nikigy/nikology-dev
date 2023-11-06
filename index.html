@@ -7,41 +7,65 @@
         <script src="js/script.js"></script>
         <style>
             .summary-container {
-                margin-top: 6vh;
-                margin-left: 5%; /* add margin to the left */
+                width: 60%; /* increase width of summary container */
+                display: flex; /* add display flex */
+                flex-direction: column; /* add flex direction column */
+                justify-content: center; /* add justify content center */
+                align-items: flex-start; /* add align items flex start */
+                margin-left: 5%; /* add margin left 5% */
             }
             .summary-container h2 {
                 font-size: 3rem; /* increase font size of h2 */
+                margin: 0;
                 font-weight: 200;
                 text-align: left;
+                color: #F1F3F9;
             }
             .summary-container p {
                 text-align: left;
                 font-size: 1.2rem; /* increase font size of p */
-                line-height: 1.5;
+                font-weight: lighter;
+                line-height: 1.7;
+                color: #F1F3F9;
             }
-            .summary-container img {
-                margin-left: 20px; /* add margin to the left */
-                width: 33%; /* set width to 33% */
+            .image-container {
+                width: 45%;
+                margin-left: 5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .image-container img {
+                width: 100%;
+                object-fit: cover; /* add object-fit cover */
+            }
+            .main-container {
+                display: flex; /* add display flex */
+                justify-content: space-between; /* add justify content space between */
+                align-items: center; /* add align items center */
             }
         </style>
     </head>
     <body>
         <div class="header">
             <h1>Welcome</h1>
-            <div class="button-container">
+            <div class="banner">
                 <div class="website-name">Website Name</div>
-                <a href="index.html"><button>Home</button></a>
-                <a href="page2.html"><button disabled>Page 2</button></a>
-                <a href="page3.html"><button disabled>Page 3</button></a>
-                <a href="page4.html"><button disabled>Page 4</button></a>
-                <a href="page5.html"><button disabled>Page 5</button></a>
+                <a href="index.html"><button id="home-btn">Home</button></a>
+                <a href="photography.html"><button id="photography-btn">Photography</button></a>
+                <a href="page3.html"><button id="page3-btn" disabled>Page 3</button></a>
+                <a href="page4.html"><button id="page4-btn" disabled>Page 4</button></a>
+                <a href="page5.html"><button id="page5-btn" disabled>Page 5</button></a>
             </div>
         </div>
-        <div class="summary-container">
-            <h2>Summary</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <img src="images/koala.jpg" alt="Koala image"> <!-- add image -->
+        <div class="main-container">
+            <div class="summary-container">
+                <h2>Summary</h2>
+                <p>Hello and welcome to my website. I am a creative and curious person who enjoys video games, drawing, and photography. I have always been fascinated by the power of technology and how it can transform our lives. That's why I am currently learning web hosting, development (lua and python), and other skills that can help me create amazing online experiences. On this website, you will be able to see some of my photos that capture my vision of the world, as well as some of my projects that showcase my coding abilities. If you want to get in touch with me, feel free to visit the contact page and send me a message. I would love to hear from you and collaborate on exciting ideas. Thank you for visiting and I hope you enjoy my website.</p>
+            </div>
+            <div class="image-container">
+                <img src="images/koala.jpg" alt="Koala image">
+            </div>
         </div>
     </body>
 </html>
