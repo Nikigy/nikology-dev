@@ -153,7 +153,6 @@ body {
 
 .content {
     min-height: 100%;
-    padding: 10px;
 }
 
 .container {
@@ -195,7 +194,7 @@ body {
     left: 0;
     width: 100%;
     background: #26282ba8;
-    color: white;
+    color: #F1F3F9;
     transform: translateY(100%);
     transition: transform 0.3s ease-in-out;
     padding: 10px;
@@ -214,6 +213,7 @@ body {
     width: 100%;
     height: auto;
     object-fit: cover;
+    cursor: pointer;
 }
 
 /* CONTACT PAGE */
@@ -249,7 +249,7 @@ body {
 .form input[type="submit"] {
     margin-top: 10px;
     background-color: #26282B;
-    color: white;
+    color: #F1F3F9;
     cursor: pointer;
 }
 
@@ -258,6 +258,8 @@ body {
 .modal {
     display: none;
     position: fixed;
+    align-items: center;
+    justify-content: center;
     z-index: 10;
     left: 0;
     top: 0;
@@ -265,32 +267,42 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
+    flex-direction: row;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .modal-content {
-    margin: 15% auto;
-    width: 60%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95%;
+    width: 95%;
+    gap: 5%;
+    flex-direction: row;
+    animation: slideIn 0.5s ease-in-out;
 }
 
 .modal-image {
-    width: 70%;
-    float: left;
+    max-width: 90%;
+    max-height: 90%;
 }
 
 .modal-description {
-    width: 30%;
-    float: left;
-    padding: 20px;
-    color: white;
+    width: 40%;
+    font-size: 2rem;
+    font-weight: lighter;
+    color: #F1F3F9;
+}
+
+body.modal-open {
+    overflow: hidden;
 }
 
 .modal-close {
     position: absolute;
     top: 20px;
     right: 40px;
-    color: white;
+    color: #F1F3F9;
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
@@ -298,4 +310,37 @@ body {
 
 .content-container.blurred {
     filter: blur(5px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #F1F3F9;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.modal-close:hover {
+    transform: scale(1.2);
 }

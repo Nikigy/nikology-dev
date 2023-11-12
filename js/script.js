@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 modalDescription.innerHTML = this.querySelector('.image-description').innerHTML;
                 if (contentContainer) contentContainer.classList.add('blurred');
             }
+
+            document.body.classList.add('modal-open');
         });
     });
 
@@ -50,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         modalClose.addEventListener('click', function() {
             modal.style.display = 'none';
             if (contentContainer) contentContainer.classList.remove('blurred');
+            document.body.classList.remove('modal-open');
         });
     }
 });
