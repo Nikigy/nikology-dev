@@ -166,9 +166,9 @@ body {
 /* PHOTOGRAPHY PAGE */
 
 .grid-container {
-    column-count: 3;
+    column-count: 4;
     column-gap: 15px;
-    margin: 15px;
+    padding: 15px;
     align-content: center;
     line-height: 0;
 }
@@ -214,6 +214,7 @@ body {
     height: auto;
     object-fit: cover;
     cursor: pointer;
+    background-color: #242527;
 }
 
 /* CONTACT PAGE */
@@ -275,21 +276,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 95%;
-    width: 95%;
-    gap: 5%;
+    height: 100%;
+    width: 100%;
     flex-direction: row;
-    animation: slideIn 0.5s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .modal-image {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 70%;
+    max-height: 100%;
 }
 
 .modal-description {
-    width: 40%;
-    font-size: 2rem;
+    max-width: 30%;
+    padding: 5%;
+    font-size: 3vw;
     font-weight: lighter;
     color: #F1F3F9;
 }
@@ -306,6 +307,7 @@ body.modal-open {
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .content-container.blurred {
@@ -319,26 +321,6 @@ body.modal-open {
     to {
         opacity: 1;
     }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: #F1F3F9;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s ease;
 }
 
 .modal-close:hover {
