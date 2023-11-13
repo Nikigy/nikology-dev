@@ -1,58 +1,55 @@
-document.addEventListener("DOMContentLoaded", function() {
-    let heroTitle = document.querySelector('.hero-title');
-    let scrollDownButton = document.querySelector('.scroll-down-button');
-    let buttonContainer = document.querySelector('.hero-banner');
-    let websiteName = document.querySelector('.website-name');
-    let modalClose = document.querySelector('.modal-close');
-    let modal = document.querySelector('.modal');
-    let contentContainer = document.querySelector('.content-container');
+document.addEventListener("DOMContentLoaded", () => {
+    const heroTitle = document.querySelector('.hero-title');
+    const scrollDownButton = document.querySelector('.scroll-down-button');
+    const heroBanner = document.querySelector('.hero-banner');
+    const websiteName = document.querySelector('.website-name');
+    const modal = document.querySelector('.modal');
+    const modalClose = document.querySelector('.modal-close');
+    const contentContainer = document.querySelector('.content-container');
 
-    if (heroTitle) {
-        heroTitle.classList.add('fade-in');
-    }
+    // Add fade-in class to hero title if it exists
+    heroTitle?.classList.add('fade-in');
 
-    if (scrollDownButton) {
-        scrollDownButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            let contentTop = document.querySelector('#content').offsetTop;
-            let bannerHeight = document.querySelector('.hero-banner').offsetHeight;
-            window.scrollTo({ top: contentTop - bannerHeight, behavior: 'smooth' });
-        });
-    }
+    // Smooth scrolling for the scroll-down button
+    scrollDownButton?.addEventListener('click', (e) => {
+        e.preventDefault();
+        const contentTop = document.querySelector('#content').offsetTop;
+        const bannerHeight = heroBanner.offsetHeight;
+        window.scrollTo({ top: contentTop - bannerHeight, behavior: 'smooth' });
+    });
 
-    window.addEventListener('scroll', function() {
-        let scrollPosition = 50; // adjust this value as needed
-
+    // Toggle classes based on scroll position
+    window.addEventListener('scroll', () => {
+        const scrollPosition = 50; // Adjust this value as needed
         if (window.pageYOffset > scrollPosition) {
-            if (buttonContainer) buttonContainer.classList.add('hero-banner--scrolled');
-            if (websiteName) websiteName.classList.add('website-name--visible');
+            heroBanner?.classList.add('hero-banner--scrolled');
+            websiteName?.classList.add('website-name--visible');
         } else {
-            if (buttonContainer) buttonContainer.classList.remove('hero-banner--scrolled');
-            if (websiteName) websiteName.classList.remove('website-name--visible');
+            heroBanner?.classList.remove('hero-banner--scrolled');
+            websiteName?.classList.remove('website-name--visible');
         }
     });
 
+    // Modal functionality
     document.querySelectorAll('.image-container').forEach(item => {
-        item.addEventListener('click', function() {
-            let modalImage = document.querySelector('.modal-image');
-            let modalDescription = document.querySelector('.modal-description');
+        item.addEventListener('click', () => {
+            const modalImage = modal.querySelector('.modal-image');
+            const modalDescription = modal.querySelector('.modal-description');
+            const imgSrc = item.querySelector('img').src;
+            const descriptionHTML = item.querySelector('.image-description').innerHTML;
 
-            if (modal && modalImage && modalDescription) {
-                modal.style.display = 'block';
-                modalImage.src = this.querySelector('img').src;
-                modalDescription.innerHTML = this.querySelector('.image-description').innerHTML;
-                if (contentContainer) contentContainer.classList.add('blurred');
-            }
-
+            modalImage.src = imgSrc;
+            modalDescription.innerHTML = descriptionHTML;
+            modal.style.display = 'block';
+            contentContainer?.classList.add('blurred');
             document.body.classList.add('modal-open');
         });
     });
 
-    if (modalClose && modal) {
-        modalClose.addEventListener('click', function() {
-            modal.style.display = 'none';
-            if (contentContainer) contentContainer.classList.remove('blurred');
-            document.body.classList.remove('modal-open');
-        });
-    }
+    // Close modal
+    modalClose?.addEventListener('click', () => {
+        modal.style.display = 'none';
+        contentContainer?.classList.remove('blurred');
+        document.body.classList.remove('modal-open');
+    });
 });
