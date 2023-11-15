@@ -25,7 +25,7 @@ a {
     justify-content: center;
     height: 100vh;
     position: relative;
-    background: url('/images/big-sur-horizon.jpg') center/cover no-repeat fixed;
+    background: url('/images/big-sur-horizon.webp') center/cover no-repeat fixed;
 }
 
 .hero::before {
